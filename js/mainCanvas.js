@@ -61,6 +61,7 @@ window.addEventListener("mousemove", function (e) {
 
 function preload() {
     for (let i = 0; i < 9; i++) {
+        console.log(musicList)
         song[i] = loadSound(`${musicList[i]}`);
     }
 }
