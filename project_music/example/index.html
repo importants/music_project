@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project2: Music App Example</title>
+
+    <!-- jQuery 및 기타 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+
+    <!-- CSS 파일 로드 -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- List 부분 -->
+    <div id="music_list"></div>
+
+    <!-- List에 들어갈 예시 아이템 -->
+    <div id="example_item" class="item" style="display: none">
+      <div class="item-img"></div>
+      <div class="item-title">Fredji - Happy Life</div>
+
+      <!-- 오디오 부분의 구조는 변경시 클래스 이름 주의할 것 -->
+      <audio class="item-audio">
+        <source type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <!-- 재생 부분 -->
+    <div id="player">
+      <div class="player-img"></div>
+      <div class="player-title">Fredji - Happy Life</div>
+      <div class="player-progress"><div></div></div>
+      <button id="prev">이전</button>
+      <button id="pause">재생/일시정지</button>
+      <button id="next">다음</button>
+    </div>
+
+    <!-- Script 파일 로드 -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

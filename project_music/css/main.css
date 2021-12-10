@@ -1,0 +1,594 @@
+@media (min-width: 335px) and (max-width: 757px) {
+  html {
+    font-size: 20%;
+  }
+}
+
+@media (min-width: 758px) and (max-width: 1499px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media (min-width: 1100px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  background: #000;
+  font-size: 62.5%;
+  overflow: hidden;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+  font-family: 'Nova Flat', cursive;
+  cursor: none;
+}
+
+.cursor {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  background-image: url(../img/cursor/move.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.cursor.active {
+  background-image: url(../img/cursor/click.png);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.home_container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  font-size: 16px;
+}
+
+.home_container > .home {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 4%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40%;
+  background: url(../img/main/home2.png);
+  font-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 70px;
+}
+
+.home_container > .home::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.home_container > .home::after {
+  content: "music room";
+  position: absolute;
+  bottom: 3%;
+  left: -10%;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -2px;
+  font-size: 4.8rem;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.home_container > .home .item_container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 69%;
+  height: 69%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_container > .home .item_container > .section {
+  position: relative;
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home_container > .home .item_container > .section::after {
+  content: "";
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.home_container > .home .item_container > .section:nth-child(1)::after {
+  content: "DANCE";
+  background: #D3310B;
+}
+
+.home_container > .home .item_container > .section:nth-child(2)::after {
+  content: "POP";
+  background: #DE6C36;
+}
+
+.home_container > .home .item_container > .section:nth-child(3)::after {
+  content: "RAP";
+  background: #FEBB45;
+}
+
+.home_container > .home .item_container > .section:nth-child(4)::after {
+  content: "INDIE";
+  background: #5FB876;
+}
+
+.home_container > .home .item_container > .section:nth-child(5)::after {
+  content: "SOLO";
+  background: #679D9F;
+}
+
+.home_container > .home .item_container > .section:nth-child(6)::after {
+  content: "ELECTRONIC";
+  background: #49ABC8;
+}
+
+.home_container > .home .item_container > .section:nth-child(7)::after {
+  content: "URBAN";
+  background: #81A1E1;
+}
+
+.home_container > .home .item_container > .section:nth-child(8)::after {
+  content: "SOUL";
+  background: #8D8BBA;
+}
+
+.home_container > .home .item_container > .section:nth-child(9)::after {
+  content: "BALLADE";
+  background: #CDAF8D;
+}
+
+.home_container > .home .item_container > .section:hover::after {
+  opacity: 1;
+}
+
+.home_container > .home .item_container > .section > .door {
+  width: 50%;
+}
+
+.home_container > .home .item_container > .section:nth-child(1) {
+  background: url(../img/main/section/1.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(1) > .door {
+  margin-top: 12%;
+  margin-left: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(2) {
+  background: url(../img/main/section/2.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(2) > .door {
+  margin-top: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(3) {
+  background: url(../img/main/section/3.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(3) > .door {
+  margin-top: 12%;
+  margin-right: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(4) {
+  background: url(../img/main/section/4.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(4) > .door {
+  margin-left: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(5) {
+  background: url(../img/main/section/5.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(6) {
+  background: url(../img/main/section/6.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(6) > .door {
+  margin-right: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(7) {
+  background: url(../img/main/section/7.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(7) > .door {
+  margin-bottom: 12%;
+  margin-left: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(8) {
+  background: url(../img/main/section/8.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(8) > .door {
+  margin-bottom: 12%;
+}
+
+.home_container > .home .item_container > .section:nth-child(9) {
+  background: url(../img/main/section/9.png) center/cover no-repeat;
+}
+
+.home_container > .home .item_container > .section:nth-child(9) > .door {
+  margin-bottom: 12%;
+  margin-right: 12%;
+}
+
+.curtain {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s margin-right;
+  transition: 1s margin-right;
+}
+
+.curtain .txt {
+  margin-top: 5%;
+  width: 40%;
+  margin-left: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 10%;
+  opacity: 0;
+}
+
+.curtain .txt > h1 {
+  font-size: 10rem;
+  text-align: center;
+  color: #fff;
+}
+
+.curtain .txt .song_container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.curtain .txt .song_container .song {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.curtain .txt .song_container .song h1 {
+  font-size: 16px;
+  font-weight: 100;
+  color: #fff;
+}
+
+.curtain .txt .song_container .song h2 {
+  font-size: 14px;
+  font-weight: 300;
+  color: #e9e9e9;
+}
+
+.curtain .enter_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20%;
+  opacity: 0;
+}
+
+.curtain .enter_container .entering {
+  width: 90%;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.curtain .enter_container .entering:hover {
+  opacity: 0.7;
+}
+
+.curtain .enter_container .road {
+  width: 200%;
+}
+
+.curtain .back {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 100px;
+}
+
+.LoadingOverlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100%;
+  background: black;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.LoadingOverlay.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.LoadingOverlay .btn {
+  display: none;
+  margin-top: 10%;
+  opacity: 0;
+  width: 10%;
+  height: 4%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 100%;
+  background-color: black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 8000;
+}
+
+.LoadingOverlay .btn:hover {
+  background-color: #303030;
+}
+
+.LoadingOverlay .btn h1 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.LoadingOverlay .wave_container {
+  position: absolute;
+  bottom: -20vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  -webkit-animation: opa 16s forwards linear;
+          animation: opa 16s forwards linear;
+}
+
+.LoadingOverlay .wave_container > div, .LoadingOverlay .wave_container > div::before, .LoadingOverlay .wave_container > div::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250vw;
+  height: 250vw;
+  margin-left: -125vw;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  background-color: transparent;
+  border-radius: 38% 42%;
+  -webkit-box-shadow: inset 0 0 10vw #D3310B;
+          box-shadow: inset 0 0 10vw #D3310B;
+  -webkit-animation: spin 16s infinite linear;
+          animation: spin 16s infinite linear;
+}
+
+.LoadingOverlay .wave_container > div:first-child {
+  border-radius: 38% 42%;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.LoadingOverlay .wave_container > div:first-child::before {
+  width: 105%;
+  height: 95%;
+  margin-top: -125vw;
+  -webkit-transform-origin: 49% 50%;
+          transform-origin: 49% 50%;
+  border-radius: 40% 38%;
+  -webkit-box-shadow: inset 0 0 10vw #DE6C36;
+          box-shadow: inset 0 0 10vw #DE6C36;
+  -webkit-animation: spin 13s infinite linear;
+          animation: spin 13s infinite linear;
+}
+
+.LoadingOverlay .wave_container > div:first-child::after {
+  width: 102%;
+  height: 98%;
+  margin-top: -125vw;
+  -webkit-transform-origin: 51% 49%;
+          transform-origin: 51% 49%;
+  border-radius: 48% 42%;
+  -webkit-box-shadow: inset 0 0 10vw #FEBB45;
+          box-shadow: inset 0 0 10vw #FEBB45;
+  -webkit-animation: spin 10s infinite linear;
+          animation: spin 10s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes opa {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes opa {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>musicRoom</title>
+
+    <!-- jQuery 및 기타 라이브러리 로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Nova+Flat&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery 및 기타 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- CSS 파일 로드 -->
+    <link rel="stylesheet" href="./css/music.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* .p5Canvas {
+        display: block;
+        top: 22%;
+        right: 24%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 1;
+        background: #4a4a4a;
+        box-shadow: 0 0 10px solid rgba(0, 0, 0, 1);
+        border-radius: 10px;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <div class="up"></div>
+    <div class="wall"></div>
+    <div class="down"></div>
+    <div class="frame_container">
+      <div>
+        <div class="frame1"><img src="./img/music/frame.png" /></div>
+      </div>
+      <div>
+        <div class="frame2"><img src="./img/music/frame1.png" /></div>
+      </div>
+      <div>
+        <div class="frame3"><img src="./img/music/frame2.png" /></div>
+      </div>
+    </div>
+    <div class="window_container">
+      <div>
+        <div class="window">
+          <img class="leftWindow" src="./img/music/window/dance_window1.png" />
+        </div>
+        <div class="window">
+          <img class="rightWindow" src="./img/music/window/dance_window2.png" />
+        </div>
+      </div>
+    </div>
+    <img class="cat" src="./img/music/cat/cat.png" />
+    <div class="tv_container">
+      <img class="tv" src="./img/music/tv/1.png" />
+      <div class="inner">
+        <div class="vol">10</div>
+        <div class="genre">
+          <p class="center">dance</p>
+          <p class="red">dance</p>
+          <p class="blue">dance</p>
+        </div>
+        <div class="Lp"><div class="black"></div></div>
+        <div class="info">
+          <h3 class="sequence">리모컨 플레이 버튼을 누르세요</h3>
+        </div>
+      </div>
+    </div>
+
+    <!--img class="window" src="./img/music/window.png" /-->
+    <div class="remote_container">
+      <div class="remote">
+        <div class="outBtn_container">
+          <div class="outBtn"></div>
+        </div>
+        <div class="cvbox">
+          <div class="channel">
+            <div class="cUp"></div>
+            <div class="cDown"></div>
+          </div>
+          <div class="volume">
+            <div class="vUp"></div>
+            <div class="vDown"></div>
+          </div>
+        </div>
+        <div class="play">
+          <div class="prev"></div>
+          <div class="pause"></div>
+          <div class="next"></div>
+        </div>
+        <div class="section">
+          <div class="s1"></div>
+          <div class="s2"></div>
+          <div class="s3"></div>
+          <div class="s4"></div>
+          <div class="s5"></div>
+          <div class="s6"></div>
+          <div class="s7"></div>
+          <div class="s8"></div>
+          <div class="s9"></div>
+        </div>
+      </div>
+    </div>
+    <div class="progress_container">
+      <div>
+        <div class="img_container">
+          <img src="./img/music/process/door.png" />
+        </div>
+        <div class="music_progressBar">
+          <div><div class="progress"></div></div>
+        </div>
+        <div class="mouse"></div>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="light"></div>
+    <!-- Script 파일 로드 -->
+    <script src="./js/lib/p5.sound.min.js"></script>
+    <script src="./js/music.js"></script>
+  </body>
+</html>

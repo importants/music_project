@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jQuery 및 기타 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+
+    <!-- CSS 파일 로드 -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .p5Canvas {
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -100;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <div class="home_container">
+      <div class="home">
+        <div class="item_container">
+          <div class="s1 section">
+            <img class="d1 door" src="./img/main/door/1.png" />
+          </div>
+          <div class="s2 section">
+            <img class="d2 door" src="./img/main/door/2.png" />
+          </div>
+          <div class="s3 section">
+            <img class="d3 door" src="./img/main/door/3.png" />
+          </div>
+          <div class="s4 section">
+            <img class="d4 door" src="./img/main/door/4.png" />
+          </div>
+          <div class="s5 section">
+            <img class="d5 door" src="./img/main/door/5.png" />
+          </div>
+          <div class="s6 section">
+            <img class="d6 door" src="./img/main/door/6.png" />
+          </div>
+          <div class="s7 section">
+            <img class="d7 door" src="./img/main/door/7.png" />
+          </div>
+          <div class="s8 section">
+            <img class="d8 door" src="./img/main/door/8.png" />
+          </div>
+          <div class="s9 section">
+            <img class="d9 door" src="./img/main/door/9.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="curtain">
+      <div class="back"><i class="fas fa-long-arrow-alt-left"></i></div>
+      <div class="txt">
+        <h1>room</h1>
+        <div class="song_container"></div>
+      </div>
+      <div class="enter_container">
+        <img class="entering" src="./img/main/door/enter.png" />
+        <img class="road" src="./img/main/road/1.png" />
+      </div>
+    </div>
+    <div class="LoadingOverlay active">
+      <div class="wave_container">
+        <div class="wave"></div>
+      </div>
+      <div class="btn"><h1>entering</h1></div>
+    </div>
+    <!-- Script 파일 로드 <script src="./js/script.js"></script> -->
+    <script src="./js/lib/p5.sound.min.js"></script>
+    <script src="./js/mainCanvas.js"></script>
+  </body>
+</html>

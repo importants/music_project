@@ -1,0 +1,997 @@
+@import "./mixin";
+
+@include mobile {
+    html {
+        font-size: 30%;
+    }
+}
+
+@include tablet {
+    html {
+        font-size: 40%;
+    }
+}
+
+@include desktop {
+    html {
+
+        font-size: 62.5%;
+    }
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Nova Flat', cursive;
+    cursor: none;
+}
+
+.cursor {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    z-index: 99999;
+    user-select: none;
+    pointer-events: none;
+    background-image: url(../img/cursor/move.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition:
+        transform .1s;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+
+    &.active {
+        background-image: url(../img/cursor/click.png);
+        transform: scale(0.9);
+    }
+}
+
+.up {
+    width: 100%;
+    background: #FFCBBE;
+    height: 60vh;
+}
+
+.wall {
+    width: 100%;
+    position: absolute;
+    top: 60vh;
+    background: #F1F1F1;
+    height: 2vh;
+}
+
+.down {
+    width: 100%;
+    background: #CD8979;
+    height: 40vh;
+}
+
+.cat {
+    width: 35%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
+
+
+.window_container {
+    width: 26%;
+    position: absolute;
+    top: 4%;
+    left: 14%;
+    z-index: 20;
+    display: flex;
+
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    &>div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 64%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        &>.window {
+            width: 48%;
+            height: 100%;
+            background: #9A9A9A;
+            border-radius: 200px 200px 10% 10%;
+            border: 10px solid #cacaca;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+
+            &>img {
+                display: block;
+                width: 101%;
+                height: 101%;
+
+
+                &.none {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+.frame_container {
+    position: absolute;
+    top: 15%;
+    right: 23.5%;
+    width: 18%;
+
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    &>div {
+        position: absolute;
+
+        &:nth-child(1) {
+            top: 0;
+            left: 45%;
+            width: 35%;
+            height: 35%;
+        }
+
+        &:nth-child(2) {
+            top: 30%;
+            left: 0%;
+            width: 40%;
+            height: 40%;
+        }
+
+        &:nth-child(3) {
+            top: 40%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+        }
+
+        &>div {
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #b6b5b3;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            box-sizing: border-box;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+.tv_container {
+    position: absolute;
+    width: 30%;
+    bottom: 0;
+    left: 30%;
+
+
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    .tv {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 80;
+    }
+
+    .inner {
+        position: absolute;
+        overflow: hidden;
+        top: 48%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 45%;
+        z-index: 81;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+
+        box-shadow: inset 0 0 100px rgba(0, 0, 0, 1);
+        transition: 0.2s;
+
+        &.outSection {
+            &::before {
+                animation: sectionOut1 ease-out forwards normal 1s;
+            }
+
+            &::after {
+                animation: sectionOut2 ease-out forwards normal 1s;
+            }
+        }
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: rgba(0, 0, 0, 1);
+            transition: 0.2s;
+            z-index: 120;
+            box-sizing: border-box;
+        }
+
+        &::before {
+            top: -50%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+
+        &::after {
+            bottom: -50%;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .vol {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            color: #fff;
+            opacity: 0;
+        }
+
+        .genre {
+            width: 100%;
+            height: 0%;
+            text-align: center;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            color: #fff;
+            z-index: 90;
+
+            p {
+                font-size: 4.0rem;
+                font-weight: 600;
+                grid-row-start: 1;
+                grid-column-start: 1;
+                --stack-height: calc(100% / var(--stacks) - 1px);
+                --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+                --clip-top: calc(var(--stack-height) * var(--index));
+                --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+                clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+
+                &.active {
+                    animation: stack 340ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms) alternate-reverse, glitch 2s ease infinite 2s;
+                }
+
+
+                &:nth-child(1) {
+                    --index: 0;
+                }
+
+                &:nth-child(2) {
+                    --index: 1;
+                }
+
+                &:nth-child(3) {
+                    --index: 2;
+                }
+
+
+                &:nth-child(odd) {
+                    --glitch-translate: 8px;
+                }
+
+                &:nth-child(even) {
+                    --glitch-translate: -8px;
+                }
+
+            }
+        }
+
+        .Lp {
+            position: absolute;
+            top: 100%;
+            left: 10%;
+            width: 80%;
+            border-radius: 50%;
+            background-color: rgb(19, 19, 19);
+            z-index: 11;
+            opacity: 0.2;
+            transform-origin: 50%;
+            animation: rotate normal infinite linear 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .black {
+                width: 30%;
+                border-radius: 50%;
+                background: #000;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+            }
+        }
+
+        .info {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 40%;
+            font-family: "Noto Sans KR", sans-serif;
+            color: #fff;
+
+            .title {
+                font-size: 1.8rem;
+                font-weight: 300;
+                line-height: 40px;
+
+                &.active {
+                    font-size: 1.6rem;
+                }
+
+                &.activeX {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .singer {
+                font-size: 1.4rem;
+                font-weight: 300;
+                color: rgb(182, 182, 182);
+                margin-bottom: 5%;
+
+                &.active {
+                    font-size: 1.2rem;
+                }
+
+                &.activeX {
+                    font-size: 1.0rem;
+                }
+            }
+
+            .sequence {
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: rgb(121, 121, 121);
+            }
+        }
+    }
+}
+
+.remote_container {
+    position: absolute;
+    top: 50%;
+    right: -7%;
+    width: 40%;
+    transform: translateY(-50%);
+    z-index: 40;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    .remote {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        height: 80%;
+        border-radius: 50px;
+        background: #000;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+        border: 5px solid #fff;
+
+        box-sizing: border-box;
+        padding: 5%;
+
+        .outBtn_container {
+            width: 100%;
+            height: 12%;
+
+            .outBtn {
+                width: 30%;
+                height: 100%;
+                background-color: #EC4652;
+                border-radius: 50%;
+                background-image: url(../img/music/remote/off.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                transition: 0.2s;
+
+                &:hover {
+                    border-radius: 50%;
+                    background-color: #EC4652;
+                    box-shadow: inset 6px 6px 12px #b1353e,
+                        inset -6px -6px 12px #ff5867;
+                }
+
+                &:active {
+                    background-color: #c2323c;
+                }
+            }
+        }
+
+        .cvbox {
+            width: 100%;
+            height: 24%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            &>div {
+                width: 30%;
+                height: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+
+                &>div {
+                    width: 100%;
+                    height: 46%;
+                    background-color: #C4C4C4;
+                    transition: 0.2s;
+
+                    &:hover {
+                        border-radius: 10px;
+                        background-color: #C4C4C4;
+                        box-shadow: inset 6px 6px 12px #939393,
+                            inset -6px -6px 12px #f5f5f5;
+                    }
+
+                    &:active {
+                        background-color: #9b9b9b;
+                    }
+
+                    &:nth-child(1) {
+                        border-radius: 10px 10px 0 0;
+
+                        &.cUp {
+                            background-image: url(../img/music/remote/cUp.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        }
+
+                        &.vUp {
+                            background-image: url(../img/music/remote/vUp.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        border-radius: 0 0 10px 10px;
+
+                        &.cDown {
+                            background-image: url(../img/music/remote/cDown.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        }
+
+                        &.vDown {
+                            background-image: url(../img/music/remote/VDown.png);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .play {
+            width: 100%;
+            height: 12%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            &.disabled {
+                &>div {
+                    &:nth-child(1) {
+                        background-color: rgb(170, 170, 170);
+                        background-image: url(../img/music/remote/prev.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+
+                        &:hover {
+                            background-color: rgb(170, 170, 170);
+                            box-shadow: none;
+                        }
+
+                        &:active {
+                            background-color: rgb(170, 170, 170);
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        background-color: #fff;
+
+                        background-image: url(../img/music/remote/play.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        animation: startPlay normal infinite linear 0.5s;
+                        animation-timing-function: ease-in-out;
+                        animation-direction: alternate;
+                        animation-fill-mode: both;
+
+                        &:active {
+                            background-color: #b9b9b9;
+                        }
+
+                    }
+
+                    &:nth-child(3) {
+                        background-color: rgb(170, 170, 170);
+                        background-image: url(../img/music/remote/next.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+
+                        &:hover {
+                            background-color: rgb(170, 170, 170);
+                            box-shadow: none;
+                        }
+
+                        &:active {
+                            background-color: rgb(170, 170, 170);
+                        }
+                    }
+                }
+            }
+
+            &>div {
+                width: 30%;
+                height: 100%;
+                background-color: rgb(219, 219, 219);
+                border-radius: 10px;
+                transition: 0.2s;
+
+
+                &:hover {
+                    border-radius: 10px;
+                    background: #F0F0F0;
+                    box-shadow: inset 6px 6px 12px #b4b4b4,
+                        inset -6px -6px 12px #ffffff;
+                }
+
+                &:active {
+                    background-color: #b9b9b9;
+                }
+
+                &:nth-child(1) {
+                    background-image: url(../img/music/remote/prev.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                &:nth-child(2) {
+                    background-image: url(../img/music/remote/play.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                &:nth-child(3) {
+                    background-image: url(../img/music/remote/next.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+
+        .section {
+            width: 100%;
+            height: 26%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            &>div {
+                width: 30%;
+                height: 25%;
+                border-radius: 8px;
+
+                &:nth-child(1) {
+                    background: #D3310B;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #9e2508,
+                            inset -6px -6px 12px #ff3d0e;
+                    }
+
+                    &:active {
+                        background-color: #a72507;
+                    }
+                }
+
+                &:nth-child(2) {
+                    background: #DE6C36;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #a75129,
+                            inset -6px -6px 12px #ff8744;
+                    }
+
+                    &:active {
+                        background-color: #bd5221;
+                    }
+                }
+
+                &:nth-child(3) {
+                    background: #FEBB45;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #bf8c34,
+                            inset -6px -6px 12px #ffea56;
+                    }
+
+                    &:active {
+                        background-color: #d39833;
+                    }
+                }
+
+                &:nth-child(4) {
+                    background: #5FB876;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #478a59,
+                            inset -6px -6px 12px #77e694;
+                    }
+
+                    &:active {
+                        background-color: #4a8a5b;
+                    }
+                }
+
+                &:nth-child(5) {
+                    background: #679D9F;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #4d7677,
+                            inset -6px -6px 12px #81c4c7;
+                    }
+
+                    &:active {
+                        background-color: #486f70;
+                    }
+                }
+
+                &:nth-child(6) {
+                    background: #49ABC8;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #378096,
+                            inset -6px -6px 12px #5bd6fa;
+                    }
+
+                    &:active {
+                        background-color: #377c91;
+                    }
+                }
+
+                &:nth-child(7) {
+                    background: #81A1E1;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #6179a9,
+                            inset -6px -6px 12px #a1c9ff;
+                    }
+
+                    &:active {
+                        background-color: #647db1;
+                    }
+                }
+
+                &:nth-child(8) {
+                    background: #8D8BBA;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #6a688c,
+                            inset -6px -6px 12px #b0aee9;
+                    }
+
+                    &:active {
+                        background-color: #68668a;
+                    }
+                }
+
+                &:nth-child(9) {
+                    background: #CDAF8D;
+
+                    &:hover {
+                        border-radius: 8px;
+                        box-shadow: inset 6px 6px 12px #9a836a,
+                            inset -6px -6px 12px #ffdbb0;
+                    }
+
+                    &:active {
+                        background-color: #a58d71;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.progress_container {
+    position: absolute;
+    bottom: -20%;
+    left: 30%;
+    width: 30%;
+    z-index: 700;
+
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    &>div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .img_container {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+
+            img {
+                width: 12%;
+            }
+        }
+
+        .music_progressBar {
+            position: relative;
+            width: 100%;
+            padding-left: 10%;
+            box-sizing: border-box;
+            height: 1.5%;
+
+
+
+            &>div {
+                width: 100%;
+                height: 100%;
+                background: #E3E3E3;
+                border-radius: 10px;
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+                .progress {
+                    width: 0%;
+                    height: 100%;
+                    background: #D3310B;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
+                }
+            }
+
+        }
+
+        .mouse {
+            position: absolute;
+            top: 45%;
+            left: 8%;
+            transform: translate(-50%, -10%);
+            width: 20%;
+            height: 20%;
+            background: url(../img/music/process/mouse.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1000;
+        }
+    }
+
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 10000;
+    opacity: 1;
+}
+
+.light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    z-index: 100000000000;
+    background: #000;
+    transition: 1s;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 1s;
+}
+
+@keyframes stack {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    }
+
+    ;
+
+    60% {
+        opacity: 0.5;
+        transform: translateX(50%);
+    }
+
+    80% {
+        transform: none;
+        opacity: 1;
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+
+    100% {
+        text-shadow: none;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+        transform: translate(var(--glitch-translate));
+    }
+
+    2% {
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+
+    4%,
+    100% {
+        text-shadow: none;
+        transform: none;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes startPlay {
+    0% {
+        background-color: rgb(218, 218, 218);
+    }
+
+    20% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: #fff;
+    }
+}
+
+@keyframes sectionOut1 {
+    to {
+        top: -50%;
+    }
+
+    10% {
+
+        top: 0%;
+    }
+
+    20% {
+        border: none;
+    }
+
+    60% {
+        border: none;
+    }
+
+    100% {
+        top: 0%;
+        border: none;
+    }
+}
+
+@keyframes sectionOut2 {
+    to {
+        bottom: -50%;
+    }
+
+    10% {
+        bottom: 0%;
+    }
+
+    60% {
+        border: rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        bottom: 0%;
+        border: rgba(255, 255, 255, 0.0);
+    }
+}

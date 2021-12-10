@@ -1,0 +1,1193 @@
+@media (min-width: 335px) and (max-width: 757px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media (min-width: 758px) and (max-width: 1499px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Nova Flat', cursive;
+  cursor: none;
+}
+
+.cursor {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  z-index: 99999;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  background-image: url(../img/cursor/move.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.cursor.active {
+  background-image: url(../img/cursor/click.png);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.up {
+  width: 100%;
+  background: #FFCBBE;
+  height: 60vh;
+}
+
+.wall {
+  width: 100%;
+  position: absolute;
+  top: 60vh;
+  background: #F1F1F1;
+  height: 2vh;
+}
+
+.down {
+  width: 100%;
+  background: #CD8979;
+  height: 40vh;
+}
+
+.cat {
+  width: 35%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 500;
+}
+
+.window_container {
+  width: 26%;
+  position: absolute;
+  top: 4%;
+  left: 14%;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.window_container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.window_container > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 64%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.window_container > div > .window {
+  width: 48%;
+  height: 100%;
+  background: #9A9A9A;
+  border-radius: 200px 200px 10% 10%;
+  border: 10px solid #cacaca;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.window_container > div > .window > img {
+  display: block;
+  width: 101%;
+  height: 101%;
+}
+
+.window_container > div > .window > img.none {
+  display: none;
+}
+
+.frame_container {
+  position: absolute;
+  top: 15%;
+  right: 23.5%;
+  width: 18%;
+}
+
+.frame_container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.frame_container > div {
+  position: absolute;
+}
+
+.frame_container > div:nth-child(1) {
+  top: 0;
+  left: 45%;
+  width: 35%;
+  height: 35%;
+}
+
+.frame_container > div:nth-child(2) {
+  top: 30%;
+  left: 0%;
+  width: 40%;
+  height: 40%;
+}
+
+.frame_container > div:nth-child(3) {
+  top: 40%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+}
+
+.frame_container > div > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #b6b5b3;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.frame_container > div > div img {
+  width: 100%;
+}
+
+.tv_container {
+  position: absolute;
+  width: 30%;
+  bottom: 0;
+  left: 30%;
+}
+
+.tv_container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.tv_container .tv {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 80;
+}
+
+.tv_container .inner {
+  position: absolute;
+  overflow: hidden;
+  top: 48%;
+  left: 45%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  height: 45%;
+  z-index: 81;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: inset 0 0 100px black;
+          box-shadow: inset 0 0 100px black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.tv_container .inner.outSection::before {
+  -webkit-animation: sectionOut1 ease-out forwards normal 1s;
+          animation: sectionOut1 ease-out forwards normal 1s;
+}
+
+.tv_container .inner.outSection::after {
+  -webkit-animation: sectionOut2 ease-out forwards normal 1s;
+          animation: sectionOut2 ease-out forwards normal 1s;
+}
+
+.tv_container .inner::after, .tv_container .inner::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 120;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.tv_container .inner::before {
+  top: -50%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tv_container .inner::after {
+  bottom: -50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tv_container .inner .vol {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: #fff;
+  opacity: 0;
+}
+
+.tv_container .inner .genre {
+  width: 100%;
+  height: 0%;
+  text-align: center;
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  color: #fff;
+  z-index: 90;
+}
+
+.tv_container .inner .genre p {
+  font-size: 4.0rem;
+  font-weight: 600;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  -webkit-clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+          clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+}
+
+.tv_container .inner .genre p.active {
+  -webkit-animation: stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards calc(var(--index) * 120ms) alternate-reverse, glitch 2s ease infinite 2s;
+          animation: stack 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1 backwards calc(var(--index) * 120ms) alternate-reverse, glitch 2s ease infinite 2s;
+}
+
+.tv_container .inner .genre p:nth-child(1) {
+  --index: 0;
+}
+
+.tv_container .inner .genre p:nth-child(2) {
+  --index: 1;
+}
+
+.tv_container .inner .genre p:nth-child(3) {
+  --index: 2;
+}
+
+.tv_container .inner .genre p:nth-child(odd) {
+  --glitch-translate: 8px;
+}
+
+.tv_container .inner .genre p:nth-child(even) {
+  --glitch-translate: -8px;
+}
+
+.tv_container .inner .Lp {
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  border-radius: 50%;
+  background-color: #131313;
+  z-index: 11;
+  opacity: 0.2;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-animation: rotate normal infinite linear 2s;
+          animation: rotate normal infinite linear 2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tv_container .inner .Lp .black {
+  width: 30%;
+  border-radius: 50%;
+  background: #000;
+}
+
+.tv_container .inner .Lp .black::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.tv_container .inner .Lp::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.tv_container .inner .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40%;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #fff;
+}
+
+.tv_container .inner .info .title {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.tv_container .inner .info .title.active {
+  font-size: 1.6rem;
+}
+
+.tv_container .inner .info .title.activeX {
+  font-size: 1.2rem;
+}
+
+.tv_container .inner .info .singer {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #b6b6b6;
+  margin-bottom: 5%;
+}
+
+.tv_container .inner .info .singer.active {
+  font-size: 1.2rem;
+}
+
+.tv_container .inner .info .singer.activeX {
+  font-size: 1.0rem;
+}
+
+.tv_container .inner .info .sequence {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #797979;
+}
+
+.remote_container {
+  position: absolute;
+  top: 50%;
+  right: -7%;
+  width: 40%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 40;
+}
+
+.remote_container::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.remote_container .remote {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40%;
+  height: 80%;
+  border-radius: 50px;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px solid #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5%;
+}
+
+.remote_container .remote .outBtn_container {
+  width: 100%;
+  height: 12%;
+}
+
+.remote_container .remote .outBtn_container .outBtn {
+  width: 30%;
+  height: 100%;
+  background-color: #EC4652;
+  border-radius: 50%;
+  background-image: url(../img/music/remote/off.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.remote_container .remote .outBtn_container .outBtn:hover {
+  border-radius: 50%;
+  background-color: #EC4652;
+  -webkit-box-shadow: inset 6px 6px 12px #b1353e, inset -6px -6px 12px #ff5867;
+          box-shadow: inset 6px 6px 12px #b1353e, inset -6px -6px 12px #ff5867;
+}
+
+.remote_container .remote .outBtn_container .outBtn:active {
+  background-color: #c2323c;
+}
+
+.remote_container .remote .cvbox {
+  width: 100%;
+  height: 24%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.remote_container .remote .cvbox > div {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.remote_container .remote .cvbox > div > div {
+  width: 100%;
+  height: 46%;
+  background-color: #C4C4C4;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.remote_container .remote .cvbox > div > div:hover {
+  border-radius: 10px;
+  background-color: #C4C4C4;
+  -webkit-box-shadow: inset 6px 6px 12px #939393, inset -6px -6px 12px #f5f5f5;
+          box-shadow: inset 6px 6px 12px #939393, inset -6px -6px 12px #f5f5f5;
+}
+
+.remote_container .remote .cvbox > div > div:active {
+  background-color: #9b9b9b;
+}
+
+.remote_container .remote .cvbox > div > div:nth-child(1) {
+  border-radius: 10px 10px 0 0;
+}
+
+.remote_container .remote .cvbox > div > div:nth-child(1).cUp {
+  background-image: url(../img/music/remote/cUp.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .cvbox > div > div:nth-child(1).vUp {
+  background-image: url(../img/music/remote/vUp.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .cvbox > div > div:nth-child(2) {
+  border-radius: 0 0 10px 10px;
+}
+
+.remote_container .remote .cvbox > div > div:nth-child(2).cDown {
+  background-image: url(../img/music/remote/cDown.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .cvbox > div > div:nth-child(2).vDown {
+  background-image: url(../img/music/remote/VDown.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .play {
+  width: 100%;
+  height: 12%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(1) {
+  background-color: #aaaaaa;
+  background-image: url(../img/music/remote/prev.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(1):hover {
+  background-color: #aaaaaa;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(1):active {
+  background-color: #aaaaaa;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(2) {
+  background-color: #fff;
+  background-image: url(../img/music/remote/play.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-animation: startPlay normal infinite linear 0.5s;
+          animation: startPlay normal infinite linear 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(2):active {
+  background-color: #b9b9b9;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(3) {
+  background-color: #aaaaaa;
+  background-image: url(../img/music/remote/next.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(3):hover {
+  background-color: #aaaaaa;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.remote_container .remote .play.disabled > div:nth-child(3):active {
+  background-color: #aaaaaa;
+}
+
+.remote_container .remote .play > div {
+  width: 30%;
+  height: 100%;
+  background-color: #dbdbdb;
+  border-radius: 10px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.remote_container .remote .play > div:hover {
+  border-radius: 10px;
+  background: #F0F0F0;
+  -webkit-box-shadow: inset 6px 6px 12px #b4b4b4, inset -6px -6px 12px #ffffff;
+          box-shadow: inset 6px 6px 12px #b4b4b4, inset -6px -6px 12px #ffffff;
+}
+
+.remote_container .remote .play > div:active {
+  background-color: #b9b9b9;
+}
+
+.remote_container .remote .play > div:nth-child(1) {
+  background-image: url(../img/music/remote/prev.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .play > div:nth-child(2) {
+  background-image: url(../img/music/remote/play.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .play > div:nth-child(3) {
+  background-image: url(../img/music/remote/next.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.remote_container .remote .section {
+  width: 100%;
+  height: 26%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.remote_container .remote .section > div {
+  width: 30%;
+  height: 25%;
+  border-radius: 8px;
+}
+
+.remote_container .remote .section > div:nth-child(1) {
+  background: #D3310B;
+}
+
+.remote_container .remote .section > div:nth-child(1):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #9e2508, inset -6px -6px 12px #ff3d0e;
+          box-shadow: inset 6px 6px 12px #9e2508, inset -6px -6px 12px #ff3d0e;
+}
+
+.remote_container .remote .section > div:nth-child(1):active {
+  background-color: #a72507;
+}
+
+.remote_container .remote .section > div:nth-child(2) {
+  background: #DE6C36;
+}
+
+.remote_container .remote .section > div:nth-child(2):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #a75129, inset -6px -6px 12px #ff8744;
+          box-shadow: inset 6px 6px 12px #a75129, inset -6px -6px 12px #ff8744;
+}
+
+.remote_container .remote .section > div:nth-child(2):active {
+  background-color: #bd5221;
+}
+
+.remote_container .remote .section > div:nth-child(3) {
+  background: #FEBB45;
+}
+
+.remote_container .remote .section > div:nth-child(3):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #bf8c34, inset -6px -6px 12px #ffea56;
+          box-shadow: inset 6px 6px 12px #bf8c34, inset -6px -6px 12px #ffea56;
+}
+
+.remote_container .remote .section > div:nth-child(3):active {
+  background-color: #d39833;
+}
+
+.remote_container .remote .section > div:nth-child(4) {
+  background: #5FB876;
+}
+
+.remote_container .remote .section > div:nth-child(4):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #478a59, inset -6px -6px 12px #77e694;
+          box-shadow: inset 6px 6px 12px #478a59, inset -6px -6px 12px #77e694;
+}
+
+.remote_container .remote .section > div:nth-child(4):active {
+  background-color: #4a8a5b;
+}
+
+.remote_container .remote .section > div:nth-child(5) {
+  background: #679D9F;
+}
+
+.remote_container .remote .section > div:nth-child(5):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #4d7677, inset -6px -6px 12px #81c4c7;
+          box-shadow: inset 6px 6px 12px #4d7677, inset -6px -6px 12px #81c4c7;
+}
+
+.remote_container .remote .section > div:nth-child(5):active {
+  background-color: #486f70;
+}
+
+.remote_container .remote .section > div:nth-child(6) {
+  background: #49ABC8;
+}
+
+.remote_container .remote .section > div:nth-child(6):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #378096, inset -6px -6px 12px #5bd6fa;
+          box-shadow: inset 6px 6px 12px #378096, inset -6px -6px 12px #5bd6fa;
+}
+
+.remote_container .remote .section > div:nth-child(6):active {
+  background-color: #377c91;
+}
+
+.remote_container .remote .section > div:nth-child(7) {
+  background: #81A1E1;
+}
+
+.remote_container .remote .section > div:nth-child(7):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #6179a9, inset -6px -6px 12px #a1c9ff;
+          box-shadow: inset 6px 6px 12px #6179a9, inset -6px -6px 12px #a1c9ff;
+}
+
+.remote_container .remote .section > div:nth-child(7):active {
+  background-color: #647db1;
+}
+
+.remote_container .remote .section > div:nth-child(8) {
+  background: #8D8BBA;
+}
+
+.remote_container .remote .section > div:nth-child(8):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #6a688c, inset -6px -6px 12px #b0aee9;
+          box-shadow: inset 6px 6px 12px #6a688c, inset -6px -6px 12px #b0aee9;
+}
+
+.remote_container .remote .section > div:nth-child(8):active {
+  background-color: #68668a;
+}
+
+.remote_container .remote .section > div:nth-child(9) {
+  background: #CDAF8D;
+}
+
+.remote_container .remote .section > div:nth-child(9):hover {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 6px 6px 12px #9a836a, inset -6px -6px 12px #ffdbb0;
+          box-shadow: inset 6px 6px 12px #9a836a, inset -6px -6px 12px #ffdbb0;
+}
+
+.remote_container .remote .section > div:nth-child(9):active {
+  background-color: #a58d71;
+}
+
+.progress_container {
+  position: absolute;
+  bottom: -20%;
+  left: 30%;
+  width: 30%;
+  z-index: 700;
+}
+
+.progress_container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.progress_container > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.progress_container > div .img_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.progress_container > div .img_container img {
+  width: 12%;
+}
+
+.progress_container > div .music_progressBar {
+  position: relative;
+  width: 100%;
+  padding-left: 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 1.5%;
+}
+
+.progress_container > div .music_progressBar > div {
+  width: 100%;
+  height: 100%;
+  background: #E3E3E3;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress_container > div .music_progressBar > div .progress {
+  width: 0%;
+  height: 100%;
+  background: #D3310B;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.progress_container > div .mouse {
+  position: absolute;
+  top: 45%;
+  left: 8%;
+  -webkit-transform: translate(-50%, -10%);
+          transform: translate(-50%, -10%);
+  width: 20%;
+  height: 20%;
+  background: url(../img/music/process/mouse.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 10000;
+  opacity: 1;
+}
+
+.light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 100000000000;
+  background: #000;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+@-webkit-keyframes stack {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  }
+  60% {
+    opacity: 0.5;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  80% {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  }
+  60% {
+    opacity: 0.5;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  80% {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@-webkit-keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    -webkit-transform: translate(var(--glitch-translate));
+            transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%,
+  100% {
+    text-shadow: none;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    -webkit-transform: translate(var(--glitch-translate));
+            transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%,
+  100% {
+    text-shadow: none;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes startPlay {
+  0% {
+    background-color: #dadada;
+  }
+  20% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+@keyframes startPlay {
+  0% {
+    background-color: #dadada;
+  }
+  20% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+@-webkit-keyframes sectionOut1 {
+  to {
+    top: -50%;
+  }
+  10% {
+    top: 0%;
+  }
+  20% {
+    border: none;
+  }
+  60% {
+    border: none;
+  }
+  100% {
+    top: 0%;
+    border: none;
+  }
+}
+
+@keyframes sectionOut1 {
+  to {
+    top: -50%;
+  }
+  10% {
+    top: 0%;
+  }
+  20% {
+    border: none;
+  }
+  60% {
+    border: none;
+  }
+  100% {
+    top: 0%;
+    border: none;
+  }
+}
+
+@-webkit-keyframes sectionOut2 {
+  to {
+    bottom: -50%;
+  }
+  10% {
+    bottom: 0%;
+  }
+  60% {
+    border: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    bottom: 0%;
+    border: rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes sectionOut2 {
+  to {
+    bottom: -50%;
+  }
+  10% {
+    bottom: 0%;
+  }
+  60% {
+    border: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    bottom: 0%;
+    border: rgba(255, 255, 255, 0);
+  }
+}
+/*# sourceMappingURL=music.css.map */

@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>splash</title>
+
+    <!-- jQuery 및 기타 라이브러리 로드 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+
+    <!-- CSS 파일 로드 -->
+    <link rel="stylesheet" href="./css/splash.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .p5Canvas {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: -100;
+        background: #000;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <div class="door-container">
+      <img class="door" src="./img/splash/door.png" />
+    </div>
+
+    <div class="txt_container">
+      <div class="txt">
+        <h2>hello<br />music</h2>
+        <h1>room</h1>
+      </div>
+    </div>
+    <div class="overlay_container"></div>
+    <!-- Script 파일 로드 -->
+    <script src="./js/splash.js"></script>
+  </body>
+</html>

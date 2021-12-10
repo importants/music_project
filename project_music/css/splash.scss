@@ -1,0 +1,116 @@
+body {
+    background: #000;
+    overflow: hidden;
+    cursor: none;
+}
+
+.cursor {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    z-index: 999999;
+    user-select: none;
+    pointer-events: none;
+    background-image: url(../img/cursor/move.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition:
+        transform .1s;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+
+    &.active {
+        background-image: url(../img/cursor/click.png);
+        transform: scale(0.9);
+    }
+}
+
+.door-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .door {
+        width: 15%;
+
+        opacity: 1;
+        transition: 0.2s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+
+
+.txt_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transform: perspective(300px);
+
+
+
+    .txt {
+        width: 60%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        transform-style: preserve-3d;
+        border-top: 10px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 10px solid rgba(255, 255, 255, 0.1);
+        z-index: 10;
+        padding-bottom: 2%;
+
+        h2 {
+            display: block;
+            font-weight: 400;
+            font-size: 120px;
+
+        }
+
+        h1 {
+            display: block;
+            font-weight: 400;
+            font-size: 200px;
+
+        }
+    }
+}
+
+.overlay_container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    z-index: 1000;
+    transform-origin: center center;
+    transition: 0.5s ease-in-out;
+
+    &.active {
+        transform: scale(300, 300);
+    }
+}
