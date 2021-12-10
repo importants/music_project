@@ -44,9 +44,7 @@ let musicList = [];
 let linkLocation;
 
 // 음악 추가
-for (let i = 0; i < 9; i++) {
-    musicList.push(`../musics/0${i}/00.mp3`)
-}
+
 //
 let song = [];
 
@@ -61,8 +59,7 @@ window.addEventListener("mousemove", function (e) {
 
 function preload() {
     for (let i = 0; i < 9; i++) {
-        console.log(musicList)
-        song[i] = loadSound(`${musicList[i]}`);
+        musicList.push(`../musics/0${i}/00.mp3`)
     }
 }
 
@@ -205,6 +202,9 @@ $(window).click(function (e) {
 $(function () {
     // click이나 gesture가 없으면 play 자체가 되지 않아 btn 추가
     $(".btn").click(function () {
+        for (let i = 0; i < 9; i++) {
+            song[i] = loadSound(`${musicList[i]}`);
+        }
         $(".LoadingOverlay").removeClass("active");
         $(".LoadingOverlay").remove();
         mainSong.loop();
